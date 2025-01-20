@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, BookOpen, Briefcase, User, Brain, Phone } from 'lucide-react';
+import { Mail, BookOpen, Briefcase, User, Brain, Phone, Newspaper} from 'lucide-react';
 import { FaKaggle, FaMedium, FaGithub, FaLinkedin, FaCertificate, FaAward } from 'react-icons/fa';
 
 const Portfolio = () => {
@@ -19,7 +19,7 @@ const Portfolio = () => {
   const projects = [
     {
       title: "Kvasir Dataset Classification and Segmentation",
-      description: "After initial using models like VGG16, custom Sequential CNN along with hyperparamter tuning showed poor learning and high loss. Hence developed a classification and segmentation pipeline using Vision Transformers model from Hugging face for classification and Fully Convolutional Networks (FCN) for segmentation. This approach improved accuracy and significantly reduced loss.",
+      description: "After initial using models like VGG16, custom Sequential CNN along with hyperparamter tuning showed poor learning and high loss(45%). Hence developed a classification and segmentation pipeline using Vision Transformers model from Hugging face for classification and Fully Convolutional Networks (FCN) for segmentation. This approach improved accuracy and significantly reduced loss(16%).",
       tech: ["Transformers", "PyTorch", "ViT", "FCN"],
       highlight: "Transformers",
       link: "https://www.kaggle.com/code/santhichowdary/kvasir-dataset-classification-segmentation"
@@ -30,7 +30,7 @@ const Portfolio = () => {
       description: "Addressed severe data imbalance in CT Kidney Scan dataset classification, using SMOTE to balance the data, resolving overfitting issues and achieving a better learning curve with reduced loss through optimized CNN model.",
       tech: ["TensorFlow", "CNN", "Optimization ALgorithms"],
       highlight: "45% Val Loss",
-      link: ""
+      link: "https://www.kaggle.com/code/santhichowdary/ct-kidney-scan-classification"
     },
 
     {
@@ -39,6 +39,14 @@ const Portfolio = () => {
       tech: ["ReactJS", "NodeJS", "Flask", "TensorFlow"],
       highlight: "80+ plant species recognition",
       link: "https://mediscan-indol.vercel.app/mediscan"
+    },
+
+    {
+      title: "Exploratory Data Analysis on the very Noisy Dataset",
+      description:"Performed Exploratory Data Analysis on the numerical dataset having noisy dat like, NaN values, Left skewed and right skewed features, outliers, categorical columns. Plotted Box plots, Violin Plots(KDE + Boxplot), Histograms to visualize the noise in the data. Trained the data using Logistic Regression and RandomForestClassifier along with hyperparameter tuning and acheived ROC/AUC value of 0.99.",
+      tech: ["LogisticRegression", "RandomForestClassifier", "HyperParameter Tuning", "Box plot", "KDE plot", "ROC/AUC"],
+      highlight: "EDA",
+      link: "https://github.com/EGN5442-UF-S2024/mini-project-3-group10-1/tree/main"
     },
 
     {
@@ -74,6 +82,15 @@ const Portfolio = () => {
       description: "Built a Sequential CNN model from scratch using Adadelta optimizer and categorical cross-entropy loss, achieving 97% accuracy.",
       tech: ["CNN", "Deep Learning", "Python"],
       highlight: "97% accuracy"
+    }
+
+  ];
+
+  const publications = [
+    {
+      title: 'Human Bias vs. Algorithmic Bias in Decision making(DermaSensor)',
+      description: 'This paper explores the cultural, technological, and ethical dimensions of biases in artificial intelligence across applications in medicine, criminal justice, and hiring practices. It highlights the prevalence of overt and covert biases, such as racial disparities in healthcare algorithms and predictive policing tools, emphasizing the detrimental impact of unrepresentative datasets. Through the case study on the DermaSensor(a skin cancer detection AI tool), the paper illustrates how algorithmic and human biases can exacerbate inequities in clinical outcomes. The study underscores the importance of equitable AI frameworks, diverse data curation, and regulatory measures to mitigate biases and promote fairness and inclusivity in AI-driven decision-making.',
+      link: "https://github.com/72santhi/Human-vs.-Algorithmic-Influence-in-Decision-Making-Publication"
     }
   ];
 
@@ -267,6 +284,37 @@ const Portfolio = () => {
             </div>
           );
             
+      case 'publications':
+        return (
+          <div className="space-y-6 animate-fadeIn">
+            <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
+              <div className="flex justify-between items-center mb-4">
+              </div>
+              {publications.map((publication, index) => (
+                <div key={index} className="mb-4">
+                  <div className="flex justify-between items-center">
+                    <h4 className="font-semibold text-lg">{publication.title}</h4>
+                    {publication.link && (
+                      <span className="text-purple-600 underline ml-2 text-sm">
+                        <a
+                          href={publication.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-purple-600 underline ml-2 text-sm"
+                        >
+                          View Publication
+                        </a>
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-sm text-gray-500">{publication.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+          
+             
       case 'achievements':
         return (
           <div className="space-y-4 animate-fadeIn">
@@ -286,7 +334,7 @@ const Portfolio = () => {
             </div>
           </div>
         );
-          
+     
       default:
       return null;
     }
@@ -343,6 +391,7 @@ const Portfolio = () => {
               { id: 'projects', icon: Brain, label: 'Projects' },
               { id: 'experience', icon: Briefcase, label: 'Experience' },
               { id: 'certifications', icon: FaCertificate, label: 'Certifications'},
+              { id: 'publications', icon: Newspaper, label:'Publications'},
               { id: 'achievements', icon: FaAward, label:'Achievements'}
 
             ].map(({ id, icon: Icon, label }) => (
