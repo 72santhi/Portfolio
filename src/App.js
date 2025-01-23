@@ -313,28 +313,52 @@ const Portfolio = () => {
             </div>
           </div>
         );
-          
-             
-      case 'achievements':
+                   
+      case 'extracurriculars':
         return (
           <div className="space-y-4 animate-fadeIn">
-            <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
-              <h3 className="text-xl font-bold mb-4">Achievements</h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-700">
-                <li>
-                  Acknowledged by <span className="font-semibold">Amazon ML Summer School</span> in 2022 and 2023, and received swags for effective participation.
-                </li>
-                <li>
-                  Secured <span className="font-semibold">III position</span> in Competitive Coding (Spardha Hackathon) conducted at our college.
-                </li>
-                <li>
+            <h3 className="text-xl font-bold mb-4">Extracurricular Activities</h3>
+            <div className="space-y-4">
+              <div className="group bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
+              
+                <p>
+                  Acknowledged by <span className="font-semibold">Amazon ML Summer School</span> in 2022 and 2023, and received swags for active participation.
+                </p>
+              </div>
+              <div className="group bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
+                <p>
+                  Secured <span className="font-semibold">III position</span> in Competitive Coding (Spardha Hackathon) conducted at our UG college.
+                </p>
+              </div>
+              <div className="group bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
+                <p>
                   Received goodies from <span className="font-semibold">Google</span> for active engagement in Women Engineering (WE) Immersion program workshops.
-                </li>
-              </ul>
+                </p>
+              </div>
+              <div className="group bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
+                <p>
+                  Served as <span className="font-semibold">Vice President</span> of NSS Women during undergraduate studies.
+                </p>
+              </div>
+              <div className="group bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
+                <p>
+                  Served as <span className="font-semibold">Class Representative</span> for the entire duration of undergraduate studies.
+                </p>
+              </div>
+              <div className="group bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
+                <p>
+                  Led several team projects, including the <span className="font-semibold">Undergraduate Final Term Project</span>, a <span className="font-semibold">Master's Degree Course Project</span>, and a <span className="font-semibold">Thesis Project</span>.
+                </p>
+              </div>
+              <div className="group bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
+                <p>
+                  Member of <span className="font-semibold">Make a Difference (MAD)</span> organization, where I tutored Mathematics and Science to students from 5th to 8th grade.
+                </p>
+              </div>
             </div>
           </div>
         );
-     
+      
       default:
       return null;
     }
@@ -392,7 +416,7 @@ const Portfolio = () => {
               { id: 'experience', icon: Briefcase, label: 'Experience' },
               { id: 'certifications', icon: FaCertificate, label: 'Certifications'},
               { id: 'publications', icon: Newspaper, label:'Publications'},
-              { id: 'achievements', icon: FaAward, label:'Achievements'}
+              { id: 'extracurriculars', icon: FaAward, label:'Extracurriculars'}
 
             ].map(({ id, icon: Icon, label }) => (
               <button
@@ -421,7 +445,15 @@ const Portfolio = () => {
       <footer className="bg-gray-900 text-white mt-20">
         <div className="max-w-5xl mx-auto px-4 py-12">
           <p className="text-gray-400 text-center">
-            © 2024 Santhi Daggubati. All rights reserved.
+            © 2024 Santhi Daggubati.{' '}
+            <a 
+              href="https://github.com/72santhi/Portfolio" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-blue-400 hover:underline"
+            >
+              GitHub
+            </a>.
           </p>
         </div>
       </footer>
