@@ -383,22 +383,26 @@ const Portfolio = () => {
             </div>
           <div className="flex gap-4 mt-6">
             <a href="https://linkedin.com/in/Santhi37911" 
-               className="flex items-center gap-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full transition-colors">
+              target="_blank"
+              className="flex items-center gap-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full transition-colors">
               <FaLinkedin size={18} />
               LinkedIn
             </a>
             <a href="https://github.com/72santhi" 
-               className="flex items-center gap-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full transition-colors">
+              target="_blank"
+              className="flex items-center gap-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full transition-colors">
               <FaGithub size={18} />
               Github
             </a>
             <a href="https://www.kaggle.com/santhichowdary" 
-               className="flex items-center gap-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full transition-colors">
+              target="_blank"
+              className="flex items-center gap-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full transition-colors">
               <FaKaggle size={18} />
               Kaggle
             </a>
             <a href="https://medium.com/@santhic214" 
-               className="flex items-center gap-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full transition-colors">
+              target="_blank"
+              className="flex items-center gap-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full transition-colors">
               <FaMedium size={18} />
               Medium
             </a>
