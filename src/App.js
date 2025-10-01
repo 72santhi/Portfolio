@@ -6,17 +6,35 @@ const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('about');
   
   const skills = {
-    "Machine Learning": ["TensorFlow", "PyTorch", "keras", "Transformers", "Scikit-learn", 
-      "NumPy", "Pandas", "Matplotlib", "Seaborn", "Hugging face", "Deep Learning", "Computer Vision", "OpenCV",
-      "LLMs", "CNNs", "RNNs", "GNNs", "Optimization Algorithms", "Hyperparameter Tuning"],
-    "Mathematics and Statistics": ["Linear Algebra", "Probability", "Statistics", "Calculus"],
-    "Programming": ["Python", "Java", "C", "SQL", "R"],
+    "Libraries &  Frameworks": ["TensorFlow", "PyTorch", "keras", "Transformers", "Scikit-learn", 
+      "NumPy", "Pandas", "Matplotlib", "Seaborn", "Hugging face", "OpenCV", "nltk", "spacy", "MATLAB"
+      ],
+    "Computer Vision & Deep Learning": ["Vision Transformers", "SAM 2", "Mask2Former", "GANs", "LLMs", "Llama", "GRU4Rec", "CNNs"],
+    "Research & Development": ["Video & Image Processing", "Fine Tuning LLMs", "Optimization", "Hyper-parameter Tuning", "Distributive Training", "GPU Aware Optimization & Inference", "Dataset Curation", "End-to-End Pipeline Development", "Python Scripting",],
+    "Programming": ["Python", "Java", "C", "C++", "R", "SQL",],
     "Cloud & DevOps": ["AWS ML", "AWS Cloud", "Azure", "Git", "Linux"],
+    "Mathematics for MAchine Learning": ["Linear Algebra", "Probability", "Statistics", "Calculus"],
     "Web Development": ["React", "Node.js", "HTML/CSS", "JavaScript", "PHP"],
     "Soft Skills": ["Leadership", "Public Speaking", "Time Management", "Adaptability", "Team work"]
   };
 
   const projects = [
+    {
+      title: "An End-to-End Session-Based Cross-Domain Recommendation System for Media Content",
+      description: "This application is an interactive cross domain recommendation system, recommends music, movies, and books dynamically based on users’ browsing behavior.",
+      tech: ["Llama", "GRU4Rec", "Fine Tuning", "PyTorch", "Streamlit"],
+      highlight: "Fine Tuning LLMs",
+      link: "https://github.com/72santhi/cap5771sp25-project"
+    },
+
+    {
+      title: "MediScan",
+      description: "A web-based application using InceptionV3, VGG16, and an ensemble of VGG16 & VGG19 models to identify 80 different Indian herbal plants.",
+      tech: ["ReactJS", "NodeJS", "Flask", "TensorFlow"],
+      highlight: "80+ plant species recognition",
+      link: "https://mediscan-indol.vercel.app/mediscan"
+    },
+
     {
       title: "Kvasir Dataset Classification and Segmentation",
       description: "After initial using models like VGG16, custom Sequential CNN along with hyperparamter tuning showed poor learning and high loss(45%). Hence developed a classification and segmentation pipeline using Vision Transformers model from Hugging face for classification and Fully Convolutional Networks (FCN) for segmentation. This approach improved accuracy and significantly reduced loss(16%).",
@@ -31,14 +49,6 @@ const Portfolio = () => {
       tech: ["TensorFlow", "CNN", "Optimization ALgorithms"],
       highlight: "45% Val Loss",
       link: "https://www.kaggle.com/code/santhichowdary/ct-kidney-scan-classification"
-    },
-
-    {
-      title: "MediScan",
-      description: "A web-based application using InceptionV3, VGG16, and an ensemble of VGG16 & VGG19 models to identify 80 different Indian herbal plants.",
-      tech: ["ReactJS", "NodeJS", "Flask", "TensorFlow"],
-      highlight: "80+ plant species recognition",
-      link: "https://mediscan-indol.vercel.app/mediscan"
     },
 
     {
@@ -87,6 +97,14 @@ const Portfolio = () => {
   ];
 
   const publications = [
+    {
+      title: "Deep Learning for Strawberry Runner Detection Integrating Ground and Aerial Imaging",
+      journal: "Smart Agriculture Technology(Elsevier)",
+      doi: "https://doi.org/10.1016/j.compag.2025.109353",
+      link: "https://www.sciencedirect.com/science/article/pii/S2772375525005210?via%3Dihub",
+      description:
+        "This peer-reviewed paper presents an integrated deep learning framework that combines UAV-based aerial imagery with ground-based imaging to accurately detect strawberry runners in complex field conditions. The fusion of multi-altitude data sources demonstrates improved robustness and scalability for automated strawberry crop management.",
+    },
     {
       title: 'Human Bias vs. Algorithmic Bias in Decision making(DermaSensor)',
       description: 'This paper explores the cultural, technological, and ethical dimensions of biases in artificial intelligence across applications in medicine, criminal justice, and hiring practices. It highlights the prevalence of overt and covert biases, such as racial disparities in healthcare algorithms and predictive policing tools, emphasizing the detrimental impact of unrepresentative datasets. Through the case study on the DermaSensor(a skin cancer detection AI tool), the paper illustrates how algorithmic and human biases can exacerbate inequities in clinical outcomes. The study underscores the importance of equitable AI frameworks, diverse data curation, and regulatory measures to mitigate biases and promote fairness and inclusivity in AI-driven decision-making.',
@@ -241,6 +259,32 @@ const Portfolio = () => {
               </div>
               <div className="space-y-6">
                 <div className="relative pl-6 border-l-2 border-blue-200">
+                  <h4 className="font-bold">Machine Learning Research Assistant</h4>
+                  <p className="text-blue-600">UF/IFAS, Institute of Food & Sciences</p>
+                  <p className="text-sm text-gray-500">Gainesville, Florida (January 2025 - Present)</p>
+                  <ul className="mt-2 space-y-2 text-gray-600">
+                    <li>• Built YOLOv8/v11/v12 pipelines for detecting strawberry runners in UAV (0.5m, 5m, 10m) and ground-vehicle images.
+                    </li>
+                    <li>• Improved detection performance (mAP@50 from ~0.65 → 0.88) using dataset curation, augmentation, and tuning.
+                    </li>
+                    <li>• Integrated runner detection into NVIDIA Isaac Sim for robotic arm–based runner cutting automation fro real-time runner cutting automation.
+                    </li>
+                    <li>• Fine-tuned Mask2Former and SAM2 for strawberry plant part segmentation (runner, flower, immature fruit, mature fruit, leaves) for comparitive study between CNN based models and Transformer based models. 
+                    </li>
+                    <li>• Compared YOLO-Seg vs. Mask2Former vs. SAM2, results are similar but YOLO achieved 0.89 accuracy even with overlapping fruit/flower instances.
+                    </li>
+                    <li>• Designed and deployed the YOLO model into Streamlit-based phenotyping app on UF PubApps with GPU-aware inference resulting in 200+ clicks for every week.
+                    </li>
+                    <li>• Created lab's large inhouse annotated strawberry datasets (2022–2025) with custom Python scripts of size 50k+ Images of 4 different classes(Runner, Immature Fruit, Fruit, Flower).
+                    </li>
+                    <li>• Trained models on GPU clusters allwing distribute training, reducing the training and inference time by 70%.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <br></br>
+              <div className="space-y-6">
+                <div className="relative pl-6 border-l-2 border-blue-200">
                   <h4 className="font-bold">AI Intern</h4>
                   <p className="text-blue-600">Cynapto Technologies</p>
                   <p className="text-sm text-gray-500">Remote, India (Sep 2023 - Dec 2023)</p>
@@ -290,26 +334,29 @@ const Portfolio = () => {
             <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
               <div className="flex justify-between items-center mb-4">
               </div>
-              {publications.map((publication, index) => (
-                <div key={index} className="mb-4">
-                  <div className="flex justify-between items-center">
-                    <h4 className="font-semibold text-lg">{publication.title}</h4>
-                    {publication.link && (
-                      <span className="text-purple-600 underline ml-2 text-sm">
-                        <a
-                          href={publication.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-purple-600 underline ml-2 text-sm"
-                        >
-                          View Publication
-                        </a>
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-sm text-gray-500">{publication.description}</p>
-                </div>
-              ))}
+              {publications.map((pub, index) => (
+                    <div key={index} className="mb-6 bg-white p-6 rounded-xl shadow-sm">
+                      <h4 className="font-bold text-lg">{pub.title}</h4>
+                      {pub.journal && <p className="text-sm text-gray-600 italic">{pub.journal}</p>}
+                      {pub.doi && (
+                        <p>
+                          DOI:{" "}
+                          <a href={pub.doi} target="_blank" rel="noopener noreferrer" className="text-purple-600 underline">
+                            {pub.doi}
+                          </a>
+                        </p>
+                      )}
+                      <p className="text-gray-600 mb-2">{pub.description}</p>
+                      <a
+                        href={pub.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 underline text-sm"
+                      >
+                        View Publication
+                      </a>
+                    </div>
+                  ))}
             </div>
           </div>
         );
